@@ -26,7 +26,6 @@ colors = ["dark green", "dark green", "firebrick", "violet", "orange red", "dark
 # for i in range(3, 15):
 #     draw_shape(i)
 
-directions = [0, 90, 180, 270]
 t.speed("fastest")
 t.width(3)
 
@@ -39,16 +38,12 @@ def random_color():
     return random_color_value
 
 
-def random_walk():
-    choice_of_directions = random.choice(directions)
-    color = random_color()
-    print(color)
-    t.color(color)
-    t.forward(30)
-    t.setheading(choice_of_directions)
 
 
-for _ in range(300):
-    random_walk()
+
+for _ in range(200):
+    t.color(random_color())
+    t.circle(100)
+    t.left(10)
 screen = Screen()
 screen.exitonclick()
