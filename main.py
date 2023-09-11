@@ -27,13 +27,23 @@ colors = ["dark green", "dark green", "firebrick", "violet", "orange red", "dark
 #     draw_shape(i)
 
 directions = [0, 90, 180, 270]
+t.speed("fastest")
+t.width(3)
+
+
+def random_color():
+    r = random.randint(0, 255) / 255.0
+    g = random.randint(0, 255) / 255.0
+    b = random.randint(0, 255) / 255.0
+    random_color_value = (r, g, b)
+    return random_color_value
 
 
 def random_walk():
     choice_of_directions = random.choice(directions)
-    t.speed("fastest")
-    t.width(3)
-    t.color(random.choice(colors))
+    color = random_color()
+    print(color)
+    t.color(color)
     t.forward(30)
     t.setheading(choice_of_directions)
 
