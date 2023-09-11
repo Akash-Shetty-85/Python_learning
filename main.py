@@ -27,7 +27,9 @@ colors = ["dark green", "dark green", "firebrick", "violet", "orange red", "dark
 #     draw_shape(i)
 
 t.speed("fastest")
-t.width(3)
+
+
+# t.width(3)
 
 
 def random_color():
@@ -38,12 +40,13 @@ def random_color():
     return random_color_value
 
 
+def draw_sprigrapg(size_pf_gap):
+    for _ in range(int(360 / size_pf_gap)):
+        t.color(random_color())
+        t.circle(100)
+        t.setheading(t.heading() + size_pf_gap)
 
 
-
-for _ in range(200):
-    t.color(random_color())
-    t.circle(100)
-    t.left(10)
+draw_sprigrapg(5)
 screen = Screen()
 screen.exitonclick()
